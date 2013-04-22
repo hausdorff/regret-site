@@ -10,7 +10,40 @@
 		We think machine learning systems should be as simple to build and deploy as web apps.
 	</p>
 	<p>
-		The goal of the <b>Regret</b> framework is to do for machine learning what frameworks like <%= link_to 'Django', 'https://www.djangoproject.com/' %> and <%= link_to 'Rails', 'http://rubyonrails.org/' %> have done for web development.
+		The goal of the <b>regret</b> framework is to do for machine learning what frameworks like <%= link_to 'Django', 'https://www.djangoproject.com/' %> and <%= link_to 'Rails', 'http://rubyonrails.org/' %> have done for web development.
+	</p>
+	<p>
+		Checkout our <%= link_to 'manifesto', '#manifesto' %>, our 
 	</p>
 </div>
 
+<div class="content">
+	<p>
+		<a name="manifesto">
+		<div class="subtitle">Manifesto</div>
+		<hr>
+	</p>
+	<p>
+		* Highly modular. Rails uses the model/view/controller model of web development. You can write `rails generate controller CreditCard` and it generates a blank template to help you build the control logic of something called `CreditCard`. You can probably partition ML into an MVC style framework, but maybe with something like cleaner/modeler/predicter. Imagine writing something like `generate cleaner Tweets`, whose job is to contain the logic for cleaning tweet data. Or maybe `generate model classifier Tweets`, to generate a model that classifies tweets (or clusters them, or whatever).
+	</p>
+
+	<p>
+		* Internet capability baked in. Most of your data will be coming over a network or something. I like two ideas here. I like the idea of internally using a robust, persistent system like Storm to make sure the system deals with the data reliably. I also like being able to access my ML system via a GET or POST request. Imagine issuing a GET to a system and simply receiving JSON containing the prediction or something. This is a critical aspect of these systems now, and it just seems good for prototyping.
+	</p>
+
+	<p>
+		* Dev/test/deployment should be clearly separated. In PHP, it's sort of up to you to build the application so that it the prototyping behavior gracefully transitions to production behavior. So, like, in prototyping, you don't cache a lot because you want all your dev changes to show up immediately, where in production, you want to cache aggressively. Well I want that for ML too. I want the logging to behave differently in production than in prototyping, and I want my system to handle that automatically.
+	</p>
+
+	<p>
+		* Related, it should be transparently scalable. You should be able to simply declare a model, and it should work in dev, and then you should be able to flip a switch to put it in production mode, and push the repot to your servers, and it should just work. Something like Heroku for ML would be just awesome.
+	</p>
+
+	<p>
+		* Database stuff abstracted away completely. Just like Rails. I don't want to have to deal with that shit. I'll define resources, and the framework should go figure that shit out for me.
+	</p>
+
+	<p>
+		* Good for truly online learning. Currently a million things can go wrong in online learning. Suppose, for example, your servers that do feature extraction go down, or there is latency, or they drift. So now your online system is outputting garbage. I want my system to handle that all transparently. Pages get generated when things go wrong.﻿
+	</p>
+</div>

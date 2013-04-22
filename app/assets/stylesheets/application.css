@@ -35,6 +35,10 @@ div#title {
 	box-shadow: 0px 0px 15px #999;
 }
 
+div.subtitle {
+	font-size:50px
+}
+
 div#title span#name {
 	font-size:100px;
 	line-height:80px;

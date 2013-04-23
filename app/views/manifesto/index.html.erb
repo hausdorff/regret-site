@@ -1,9 +1,4 @@
-
-<div id="title">
-	<span id="name">regret</span>
-	<hr>
-	<div class="subtitle">a painless machine learning framework for everyone</div>
-</div>
+<%= render '/title' %>
 
 <div class="content">
 	<p>
@@ -34,4 +29,12 @@
 	<p>
 		* Good for truly online learning. Currently a million things can go wrong in online learning. Suppose, for example, your servers that do feature extraction go down, or there is latency, or they drift. So now your online system is outputting garbage. I want my system to handle that all transparently. Pages get generated when things go wrong.﻿
 	</p>
+	<p>
+		<%= image_tag 'logo_med2.png' %>
+		<center><em>Come join us.</em></center>
+	</p>
+	<p>
+	</p>
 </div>
+
+<%= render '/copyright' %>
